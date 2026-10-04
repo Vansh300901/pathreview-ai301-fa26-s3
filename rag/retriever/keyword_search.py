@@ -25,7 +25,7 @@ class KeywordSearcher:
             self.bm25 = None
             logger.info("keyword_index_empty")
             return
-            
+
         self.chunks = chunks
         tokenized_corpus = [self._tokenize(chunk["text"]) for chunk in chunks]
         self.bm25 = BM25Okapi(tokenized_corpus)
